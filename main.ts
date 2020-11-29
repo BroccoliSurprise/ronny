@@ -26,9 +26,15 @@ basic.forever(function () {
 basic.forever(function () {
     if (ignition == true) {
         if (distanc3e < 3) {
-            Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 20)
-            basic.pause(randint(300, 900))
-            Kitronik_Move_Motor.stop()
+            if (Math.randomBoolean()) {
+                Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 20)
+                basic.pause(randint(300, 900))
+                Kitronik_Move_Motor.stop()
+            } else {
+                Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 20)
+                basic.pause(randint(300, 900))
+                Kitronik_Move_Motor.stop()
+            }
         } else {
             Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, distanc3e)
         }
